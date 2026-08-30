@@ -1,0 +1,19 @@
+# The A²OK World Kindness Gazette — Netlify configuration
+
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# The current issue is served at the root.
+# Every issue also keeps a permanent home under /issues/ that never changes.
+[[redirects]]
+  from = "/current"
+  to = "/"
+  status = 302
